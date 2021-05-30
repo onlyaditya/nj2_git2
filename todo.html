@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .line {
+            text-decoration: line-through;
+            color: green;
+        }
+
+        .grid {
+            width: 20%;
+            display: grid;
+            grid-template-columns: 60% 20% 20%;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Todo List</h1>
+    <input type="text" name="" id="myTask">
+    <button id="submit-btn">Submit</button>
+
+    <div id="tasks"></div>
+</body>
+
+</html>
+
+<script>
+    var submit_btn = document.getElementById('submit-btn');
+    submit_btn.addEventListener('click', getInput);
+
+    var id = 0;
+
+    function getInput() {
+        var myTask = document.getElementById('myTask').value;
+        var tasks_div = document.getElementById('tasks');
+        var div = document.createElement('div');
+
+        id = id + 1;
+
+        div.innerHTML = `<p id=${id}>${myTask}</p><button onclick = "done(${id})">Done</button><button onclick="remove(${id})">Remove</button>`
+        tasks_div.appendChild(div);
+        div.setAttribute('class', 'grid');
+    }
+
+    function done(id) {
+        var p = document.getElementById(id);
+        p.setAttribute('class', 'line');
+    }
+
+    function remove(id) {
+        var p = document.getElementById(id);
+        var res = p.parentElement;
+        res.remove();
+    }
+</script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Continent</title>
+</head>
+
+<body>
+    <label for="country">Select Country</label>
+    <select name="country" id="country">
+        <option value="india" class="Asia">India</option>
+        <option value="United State of America" class="USA">United State of America</option>
+        <option value="China" class="china">China</option>
+        <option value="nepal" class="Asia">Nepal</option>
+        <option value="Australia" class="Australia">Australia</option>
+        <!-- <option value="india">France</option>
+        <option value="india">Germany</option>
+        <option value="South Africa">South Africa</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Canada">Canada</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Sweden">Sweden</option> -->
+    </select>
+    <button onclick="find()">Find Continent</button>
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+
+    function find() {
+        var input = document.getElementById("country").value;
+
+        var cont = "";
+
+        if (input == "India") {
+            console.log("Asia");
+        }
+
+        switch (input) {
+            case "india":
+                cont = "Asia";
+                break;
+            case "United State of America":
+                cont = "USA";
+                break;
+            case "nepal":
+                cont = "Asia";
+                break;
+            case "Australia":
+                cont = "Australia";
+                break;
+            case "China":
+                cont = "China";
+                break;
+        }
+
+        alert(`The continent is ${cont}`);
+    }
+
+
+</script>
